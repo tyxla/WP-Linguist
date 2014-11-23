@@ -12,6 +12,14 @@
  * Main plugin class.
  */
 class WP_Linguist {
+	/**
+	 * Contains all loaded modules.
+	 *
+	 * @access protected
+	 *
+	 * @var array
+	 */
+	protected $modules = array();
 
 	/**
 	 * Constructor.
@@ -21,7 +29,29 @@ class WP_Linguist {
 	 * @access public
 	 */
 	public function __construct() {
+		
+	}
 
+	/**
+	 * Retrieve the modules to be loaded.
+	 *
+	 * @access public
+	 *
+	 * @return array $modules The currently registered modules.
+	 */
+	public function get_modules() {
+		return $this->modules;
+	}
+
+	/**
+	 * Modify the modules to be loaded.
+	 *
+	 * @access public
+	 *
+	 * @param array $modules An array of module class name strings.
+	 */
+	public function set_modules($modules = array()) {
+		$this->modules = $modules;
 	}
 
 }
