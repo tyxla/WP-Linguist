@@ -33,13 +33,16 @@ class WP_Linguist {
 		// load the modules
 		add_action('init', array($this, 'load'));
 
+		// setup the modules
+		add_action('admin_init', array($this, 'setup'));
+
 		// render the modules below the main WYSIWYG editor
 		add_action('edit_form_after_editor', array($this, 'render'));
 
 	}
 
 	/**
-	 * Load all the linguist modules.
+	 * Load all the Linguist modules.
 	 *
 	 * @access public
 	 */
@@ -52,7 +55,16 @@ class WP_Linguist {
 	}
 
 	/**
-	 * Render the loaded linguist modules.
+	 * Setup all the loaded Linguist modules.
+	 *
+	 * @access public
+	 */
+	public function setup() {
+
+	}
+
+	/**
+	 * Render the loaded Linguist modules.
 	 *
 	 * @access public
 	 *
