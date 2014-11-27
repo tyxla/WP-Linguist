@@ -40,7 +40,7 @@ class WP_Linguist_Module_Manager {
 	public function load() {
 		// allow for new modules to be registered
 		$module_names = apply_filters('wp_linguist_modules', array(
-
+			'WP_Linguist_Module_Word_Character_Count'
 		));
 
 		// initialize the modules

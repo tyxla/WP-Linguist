@@ -51,6 +51,12 @@ class WP_Linguist {
 		// hook the rendering of all modules
 		add_action('wp_linguist_render', array($this->module_manager, 'render_modules'));
 
+		// enqueue scripts
+		add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
+
+		// enqueue styles
+		add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
+
 	}
 
 	/**
@@ -61,6 +67,8 @@ class WP_Linguist {
 	protected function include_files() {
 		require_once($this->get_plugin_path() . '/core/class-module-manager.php');
 		require_once($this->get_plugin_path() . '/core/class-module-base.php');
+
+		require_once($this->get_plugin_path() . '/modules/word-character-count/module.php');
 	}
 
 	/**
@@ -105,6 +113,33 @@ class WP_Linguist {
 	 */
 	protected function set_plugin_path($plugin_path) {
 		$this->plugin_path = $plugin_path;
+	}
+
+	/**
+	 * URL to the plugin assets.
+	 *
+	 * @access public
+	 */
+	public function assets_url() {
+		return plugins_url('/', __FILE__);
+	}
+
+	/**
+	 * Enqueue main plugin scripts.
+	 *
+	 * @access public
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_script('wp-linguist-main', $this->assets_url() . 'js/main.js');
+	}
+
+	/**
+	 * Enqueue main plugin styles.
+	 *
+	 * @access public
+	 */
+	public function enqueue_styles() {
+		wp_enqueue_style('wp-linguist-main', $this->assets_url() . 'css/main.css');
 	}
 
 }
