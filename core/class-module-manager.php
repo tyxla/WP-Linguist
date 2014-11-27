@@ -39,34 +39,64 @@ class WP_Linguist_Module_Manager {
 	 */
 	public function load() {
 		// allow for new modules to be registered
-		$modules = apply_filters('wp_linguist_modules', array());
+		$module_names = apply_filters('wp_linguist_modules', array(
+
+		));
+
+		// initialize the modules
+		$modules = array();
+		foreach ($module_names as $module_name) {
+			$modules[] = new $module_name;
+		}
 
 		// register the modules
 		$this->set_modules($modules);
 	}
 
 	/**
-	 * Setup all the loaded Linguist modules.
+	 * Setup all the registered Linguist modules.
 	 *
 	 * @access public
 	 */
 	public function setup() {
-
+		$modules = $this->get_modules();
+		foreach ($modules as $module) {
+			$module->setup();
+		}
 	}
 
 	/**
-	 * Render the loaded Linguist modules.
+	 * Render the main module container.
 	 *
 	 * @access public
 	 *
 	 * @param WP_Post $post The post object
 	 */
 	public function render($post = null) {
-		
+		global $wp_linguist;		
+
+		// determine the main template
+		$template = $wp_linguist->get_plugin_path() . '/templates/main.php';
+		$template = apply_filters('wp_linguist_main_template', $template);
+
+		// render the main template
+		include_once($template);
 	}
 
 	/**
-	 * Retrieve the modules to be loaded.
+	 * Render all modules.
+	 *
+	 * @access public
+	 */
+	public function render_modules() {
+		$modules = $this->get_modules();
+		foreach ($modules as $module) {
+			$module->render();
+		}
+	}
+
+	/**
+	 * Retrieve all the registered modules.
 	 *
 	 * @access public
 	 *
@@ -77,11 +107,11 @@ class WP_Linguist_Module_Manager {
 	}
 
 	/**
-	 * Modify the modules to be loaded.
+	 * Modify the registered modules.
 	 *
 	 * @access public
 	 *
-	 * @param array $modules An array of module class name strings.
+	 * @param array $modules An array of module objects.
 	 */
 	public function set_modules($modules = array()) {
 		$this->modules = $modules;
