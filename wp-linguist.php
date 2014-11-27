@@ -60,6 +60,7 @@ class WP_Linguist {
 	 */
 	protected function include_files() {
 		require_once($this->get_plugin_path() . '/core/class-module-manager.php');
+		require_once($this->get_plugin_path() . '/core/class-module-base.php');
 	}
 
 	/**
