@@ -1,4 +1,4 @@
-WP Linguist
+WP Linguist - Advanced Content Stats
 ===========
 
 #### About
