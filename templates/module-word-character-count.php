@@ -2,31 +2,31 @@
 	<table>
 		<tr>
 			<th>Words</th>
-			<td class="wcc-words"></td>
+			<td id="wp-linguist-module-wcc-words"></td>
 		</tr>
 		<tr>
 			<th>Characters</th>
-			<td class="wcc-characters"></td>
+			<td id="wp-linguist-module-wcc-characters"></td>
 		</tr>
 		<tr>
 			<th>Characters (no spaces)</th>
-			<td class="wcc-characters-no-spaces"></td>
+			<td id="wp-linguist-module-wcc-characters-no-spaces"></td>
 		</tr>
 		<tr>
 			<th>Sentences</th>
-			<td class="wcc-sentences"></td>
+			<td id="wp-linguist-module-wcc-sentences"></td>
 		</tr>
 		<tr>
 			<th>Average Sentence Words</th>
-			<td class="wcc-avg-sentence-words"></td>
+			<td id="wp-linguist-module-wcc-avg-sentence-words"></td>
 		</tr>
 		<tr>
 			<th>Average Sentence Characters</th>
-			<td class="wcc-avg-sentence-characters"></td>
+			<td id="wp-linguist-module-wcc-avg-sentence-characters"></td>
 		</tr>
 		<tr>
 			<th>Paragraphs</th>
-			<td class="wcc-paragraphs"></td>
+			<td id="wp-linguist-module-wcc-paragraphs"></td>
 		</tr>
 	</table>
 </div>
