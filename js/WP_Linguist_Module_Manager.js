@@ -1,5 +1,9 @@
-var WP_Linguist_Module_Manager = Backbone.Collection.extend({
+var WP_Linguist_Module_Manager;
 
-	model: WP_Linguist_Module
+(function($){
+	WP_Linguist_Module_Manager = Backbone.Collection.extend({
 
-});
+		model: WP_Linguist_Module
+
+	});
+})(jQuery);

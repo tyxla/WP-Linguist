@@ -1,11 +1,15 @@
-var WP_Linguist_Module = Backbone.Model.extend({
+var WP_Linguist_Module;
 
-	initialize: function() {
+(function($){
+	WP_Linguist_Module = Backbone.Model.extend({
 
-	},
+		initialize: function() {
+			wp_linguist.module_manager.add(this);
+		},
 
-	update: function() {
-		
-	}
+		update: function() {
+			this.trigger('change');
+		}
 
-});
+	});
+})(jQuery);

@@ -1,7 +1,7 @@
 var wp_linguist;
 
-jQuery(function($) {
+(function($){
 
 	wp_linguist = new WP_Linguist();
-
-});
+	
+})(jQuery);

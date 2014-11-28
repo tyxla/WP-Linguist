@@ -45,6 +45,8 @@ class WP_Linguist_Module_Word_Character_Count extends WP_Linguist_Module_Base {
 	 */
 	public function enqueue_scripts() {
 		wp_enqueue_script('wp-linguist-module-word-character-count', $this->assets_url() . 'js/module.js');
+		wp_enqueue_script('wp-linguist-view-word-character-count', $this->assets_url() . 'js/view.js');
+		wp_enqueue_script('wp-linguist-main-word-character-count', $this->assets_url() . 'js/main.js');
 	}
 
 	/**

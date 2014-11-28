@@ -1,11 +1,5 @@
-jQuery(function($) {
+(function($){
+	WP_Linguist.Module_Word_Character_Count = WP_Linguist_Module.extend({
 
-	var module = new WP_Linguist_Module();
-
-	module.update = function(content) {
-		
-	}
-
-	wp_linguist.module_manager.add(module);
-
-});
+	});
+})(jQuery);
