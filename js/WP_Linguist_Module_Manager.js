@@ -1,3 +1,4 @@
+// Main WP_Linguist_Module_Manager model
 var WP_Linguist_Module_Manager;
 
 (function($){
