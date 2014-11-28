@@ -1,1 +1,5 @@
-.wp-linguist { background: #fff; border: 1px solid #e5e5e5; border-top: 0; padding: 10px; }
+.wp-linguist { background: #fff; border: 1px solid #e5e5e5; border-top: 0; padding: 10px; 
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
