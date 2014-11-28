@@ -1,8 +1,7 @@
-// Main WP_Linguist_Module view
-var WP_Linguist_Module_View;
+// Main WP_Linguist.Module_View view
 
 (function($){
-	WP_Linguist_Module_View = Backbone.View.extend({	
+	WP_Linguist.Module_View = Backbone.View.extend({	
 
 	});
 })(jQuery);

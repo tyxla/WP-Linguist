@@ -1,8 +1,7 @@
-// Main WP_Linguist_Module model
-var WP_Linguist_Module;
+// Main WP_Linguist.Module model
 
 (function($){
-	WP_Linguist_Module = Backbone.Model.extend({
+	WP_Linguist.Module = Backbone.Model.extend({
 
 		initialize: function() {
 			// add this module to the module manager
