@@ -134,6 +134,7 @@ class WP_Linguist {
 		wp_enqueue_script('wp-linguist-module', $this->assets_url() . 'js/WP_Linguist_Module.js', array('jquery', 'backbone'));
 		wp_enqueue_script('wp-linguist-module-manager', $this->assets_url() . 'js/WP_Linguist_Module_Manager.js', array('jquery', 'backbone'));
 		wp_enqueue_script('wp-linguist-module-view', $this->assets_url() . 'js/WP_Linguist_Module_View.js', array('jquery', 'backbone'));
+		wp_enqueue_script('wp-linguist-editor', $this->assets_url() . 'js/WP_Linguist_Editor.js', array('jquery', 'backbone'));
 		wp_enqueue_script('wp-linguist', $this->assets_url() . 'js/main.js', array('jquery', 'backbone'));
 	}
 

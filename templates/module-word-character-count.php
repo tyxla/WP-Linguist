@@ -1,4 +1,4 @@
-<div class="word-character-count">
+<div id="wp-linguist-module-wcc" class="word-character-count">
 	<table>
 		<tr>
 			<th>Words</th>

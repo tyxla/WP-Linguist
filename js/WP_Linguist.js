@@ -7,6 +7,9 @@ var WP_Linguist;
 		initialize: function() {
 			// initialize module manager
 			this.module_manager = new WP_Linguist.Module_Manager();
+
+			// initialize editor
+			this.editor = new WP_Linguist.Editor();
 		},
 
 		update: function(content) {
