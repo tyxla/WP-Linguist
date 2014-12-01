@@ -9,7 +9,10 @@
 		},
 
 		render: function(content) {
-			
+			// recount stats
+			this.model.count(content);
+
+			// TODO: populate stats in the view
 		}
 
 	});
