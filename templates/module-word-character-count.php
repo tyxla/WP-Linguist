@@ -1,32 +1,32 @@
 <div id="wp-linguist-module-wcc" class="word-character-count">
 	<table>
 		<tr>
-			<th>Words</th>
-			<td id="wp-linguist-module-wcc-words"></td>
+			<th>Words:</th>
+			<td><span id="wp-linguist-module-wcc-words"></span></td>
 		</tr>
 		<tr>
-			<th>Characters</th>
-			<td id="wp-linguist-module-wcc-characters"></td>
+			<th>Characters:</th>
+			<td><span id="wp-linguist-module-wcc-characters"></span></td>
 		</tr>
 		<tr>
-			<th>Characters (no spaces)</th>
-			<td id="wp-linguist-module-wcc-characters-no-spaces"></td>
+			<th>Characters (no spaces):</th>
+			<td><span id="wp-linguist-module-wcc-characters_no_spaces"></span></td>
 		</tr>
 		<tr>
-			<th>Sentences</th>
-			<td id="wp-linguist-module-wcc-sentences"></td>
+			<th>Sentences:</th>
+			<td><span id="wp-linguist-module-wcc-sentences"></span></td>
 		</tr>
 		<tr>
-			<th>Average Sentence Words</th>
-			<td id="wp-linguist-module-wcc-avg-sentence-words"></td>
+			<th>Average Sentence Words:</th>
+			<td><span id="wp-linguist-module-wcc-avg_sentence_words"></span></td>
 		</tr>
 		<tr>
-			<th>Average Sentence Characters</th>
-			<td id="wp-linguist-module-wcc-avg-sentence-characters"></td>
+			<th>Average Sentence Characters:</th>
+			<td><span id="wp-linguist-module-wcc-avg_sentence_characters"></span></td>
 		</tr>
 		<tr>
-			<th>Paragraphs</th>
-			<td id="wp-linguist-module-wcc-paragraphs"></td>
+			<th>Paragraphs:</th>
+			<td><span id="wp-linguist-module-wcc-paragraphs"></span></td>
 		</tr>
 	</table>
 </div>

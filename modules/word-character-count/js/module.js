@@ -8,8 +8,15 @@
 			content = content.replace(/(<([^>]+)>)/ig, "");
 
 			// count & populate data
+			// TODO: make dynamic
 			this.module_data = {
-				// TODO: populate stats here
+				words: 5,
+				characters: 21,
+				characters_no_spaces: 17,
+				sentences: 2,
+				avg_sentence_words: 3,
+				avg_sentence_characters: 11,
+				paragraphs: 1
 			};
 		}
 

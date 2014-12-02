@@ -12,7 +12,10 @@
 			// recount stats
 			this.model.count(content);
 
-			// TODO: populate stats in the view
+			// populate stats in the view
+			for( stat in this.model.module_data ) {
+				$('#wp-linguist-module-wcc-' + stat).text( this.model.module_data[stat] );
+			}
 		}
 
 	});

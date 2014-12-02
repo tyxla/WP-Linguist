@@ -13,6 +13,7 @@
 				obj.instance.on('change', function(e) {
 					obj.update( this.getContent() );
 				});
+
 			});
 		},
 
