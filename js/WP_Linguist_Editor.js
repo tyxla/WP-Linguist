@@ -14,6 +14,8 @@
 					obj.update( this.getContent() );
 				});
 
+				// initial update to load the initial stats
+				obj.instance.fire('change');
 			});
 		},
 
