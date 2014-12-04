@@ -12,7 +12,7 @@
 			this.module_data = {
 				words: this.count_words(content),
 				characters: this.count_characters(content),
-				characters_no_spaces: 17,
+				characters_no_spaces: this.count_characters_no_spaces(content),
 				sentences: 2,
 				avg_sentence_words: 3,
 				avg_sentence_characters: 11,
@@ -26,6 +26,10 @@
 
 		count_characters: function(content) {
 			return content ? content.length : 0;
+		},
+
+		count_characters_no_spaces: function(content) {
+			return content ? content.replace(/\s+/g, "").length : 0;
 		}
 
 	});
