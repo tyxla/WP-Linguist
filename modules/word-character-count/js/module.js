@@ -11,7 +11,7 @@
 			// TODO: make dynamic
 			this.module_data = {
 				words: this.count_words(content),
-				characters: 21,
+				characters: this.count_characters(content),
 				characters_no_spaces: 17,
 				sentences: 2,
 				avg_sentence_words: 3,
@@ -21,7 +21,11 @@
 		},
 
 		count_words: function(content) {
-			return content.match(/\S+/g).length;
+			return content ? content.match(/\S+/g).length : 0;
+		},
+
+		count_characters: function(content) {
+			return content ? content.length : 0;
 		}
 
 	});
