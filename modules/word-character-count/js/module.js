@@ -15,7 +15,7 @@
 				characters_no_spaces: this.count_characters_no_spaces(content),
 				sentences: this.count_sentences(content),
 				avg_sentence_words: this.count_avg_sentence_words(content),
-				avg_sentence_characters: 11,
+				avg_sentence_characters: this.count_avg_sentence_characters(content),
 				paragraphs: 1
 			};
 		},
@@ -39,7 +39,13 @@
 		count_avg_sentence_words: function(content) {
 			var sentences = this.count_sentences(content);
 			var words = this.count_words(content);
-			return sentences ? Math.ceil(words / sentences) : 0;
+			return sentences ? Math.round(words / sentences) : 0;
+		},
+
+		count_avg_sentence_characters: function(content) {
+			var sentences = this.count_sentences(content);
+			var characters = this.count_characters(content);
+			return sentences ? Math.round(characters / sentences) : 0;
 		}
 
 	});
