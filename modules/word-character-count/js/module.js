@@ -4,11 +4,13 @@
 	WP_Linguist.Module.Word_Character_Count = WP_Linguist.Module.extend({
 
 		count: function(content) {
+			// we might need the unfiltered content for later
+			var unfiltered_content = content;
+
 			// strip HTML tags
 			content = content.replace(/(<([^>]+)>)/ig, "");
 
 			// count & populate data
-			// WIP: make dynamic
 			this.module_data = {
 				words: this.count_words(content),
 				characters: this.count_characters(content),
@@ -16,7 +18,7 @@
 				sentences: this.count_sentences(content),
 				avg_sentence_words: this.count_avg_sentence_words(content),
 				avg_sentence_characters: this.count_avg_sentence_characters(content),
-				paragraphs: 1
+				paragraphs: this.count_paragraphs(unfiltered_content)
 			};
 		},
 
@@ -46,6 +48,10 @@
 			var sentences = this.count_sentences(content);
 			var characters = this.count_characters(content);
 			return sentences ? Math.round(characters / sentences) : 0;
+		},
+
+		count_paragraphs: function(content) {
+			return content ? content.split(/(?:<\/p>)|(?:<\/h[1-6]>)/).wp_linguist_clean().length : 0;
 		}
 
 	});
