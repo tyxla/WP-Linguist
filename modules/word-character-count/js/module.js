@@ -8,13 +8,13 @@
 			content = content.replace(/(<([^>]+)>)/ig, "");
 
 			// count & populate data
-			// TODO: make dynamic
+			// WIP: make dynamic
 			this.module_data = {
 				words: this.count_words(content),
 				characters: this.count_characters(content),
 				characters_no_spaces: this.count_characters_no_spaces(content),
 				sentences: this.count_sentences(content),
-				avg_sentence_words: 3,
+				avg_sentence_words: this.count_avg_sentence_words(content),
 				avg_sentence_characters: 11,
 				paragraphs: 1
 			};
@@ -34,6 +34,12 @@
 
 		count_sentences: function(content) {
 			return content ? content.match(/[^\.!\?]+/g).length : 0;
+		},
+
+		count_avg_sentence_words: function(content) {
+			var sentences = this.count_sentences(content);
+			var words = this.count_words(content);
+			return sentences ? Math.ceil(words / sentences) : 0;
 		}
 
 	});
