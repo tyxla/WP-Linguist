@@ -10,7 +10,7 @@
 			// count & populate data
 			// TODO: make dynamic
 			this.module_data = {
-				words: 5,
+				words: this.count_words(content),
 				characters: 21,
 				characters_no_spaces: 17,
 				sentences: 2,
@@ -18,6 +18,10 @@
 				avg_sentence_characters: 11,
 				paragraphs: 1
 			};
+		},
+
+		count_words: function(content) {
+			return content.match(/\S+/g).length;
 		}
 
 	});
