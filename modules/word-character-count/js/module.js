@@ -17,6 +17,7 @@
 				characters: this.count_characters(content),
 				characters_no_spaces: this.count_characters_no_spaces(content),
 				sentences: this.count_sentences(content),
+				avg_word_characters: this.count_avg_word_characters(content),
 				avg_sentence_words: this.count_avg_sentence_words(content),
 				avg_sentence_characters: this.count_avg_sentence_characters(content),
 				paragraphs: this.count_paragraphs(unfiltered_content)
@@ -25,7 +26,7 @@
 
 		// count the number of words
 		count_words: function(content) {
-			return content ? content.match(/\S+/g).length : 0;
+			return content ? content.match(/\S+/gm).length : 0;
 		},
 
 		// count the number of characters
@@ -41,6 +42,13 @@
 		// count the number of sentences
 		count_sentences: function(content) {
 			return content ? content.match(/[^\.!\?]+/g).length : 0;
+		},
+
+		// calculate the average characters per word
+		count_avg_word_characters: function(content) {
+			var words = this.count_words(content);
+			var characters = this.count_characters_no_spaces(content);
+			return words ? Math.round(characters / words) : 0;
 		},
 
 		// calculate the average words per sentence

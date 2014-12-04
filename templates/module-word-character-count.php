@@ -17,6 +17,10 @@
 			<td><span id="wp-linguist-module-wcc-sentences"></span></td>
 		</tr>
 		<tr>
+			<th><?php _e('Average Word Characters:', 'wp_linguist'); ?></th>
+			<td><span id="wp-linguist-module-wcc-avg_word_characters"></span></td>
+		</tr>
+		<tr>
 			<th><?php _e('Average Sentence Words:', 'wp_linguist'); ?></th>
 			<td><span id="wp-linguist-module-wcc-avg_sentence_words"></span></td>
 		</tr>
