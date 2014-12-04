@@ -3,11 +3,14 @@
 (function($){
 	WP_Linguist.Module_View.Word_Character_Count = WP_Linguist.Module_View.extend({
 		
+		// constructor
 		initialize: function() {
 			// make sure view is updated on module update
 			this.model.on('change', this.render, this);
 		},
 
+		// insert new data or update the current data
+		// after the model is updated
 		render: function(content) {
 			// recount stats
 			this.model.count(content);
