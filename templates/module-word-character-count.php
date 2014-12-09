@@ -5,6 +5,10 @@
 			<td><span id="wp-linguist-module-wcc-words"></span></td>
 		</tr>
 		<tr>
+			<th><?php _e('Unique Words:', 'wp_linguist'); ?></th>
+			<td><span id="wp-linguist-module-wcc-unique_words"></span></td>
+		</tr>
+		<tr>
 			<th><?php _e('Characters:', 'wp_linguist'); ?></th>
 			<td><span id="wp-linguist-module-wcc-characters"></span></td>
 		</tr>

@@ -11,9 +11,16 @@
 			// strip HTML tags
 			content = content.replace(/(<([^>]+)>)/ig, "");
 
+			// collect all words, lowercase
+			words = content ? content.match(/\S+/gm) : [];
+			for(var i = 0; i < words.length; i++) {
+				words[i] = words[i].replace(/\W+/g, '').toLowerCase();
+			}
+
 			// count & populate data
 			this.module_data = {
 				words: this.count_words(content),
+				unique_words: this.count_unique_words(words),
 				characters: this.count_characters(content),
 				characters_no_spaces: this.count_characters_no_spaces(content),
 				sentences: this.count_sentences(content),
@@ -27,6 +34,17 @@
 		// count the number of words
 		count_words: function(content) {
 			return content ? content.match(/\S+/gm).length : 0;
+		},
+
+		// count the number of unique words
+		count_unique_words: function(words) {
+			var unique_words = [];
+			for(var i = 0; i < words.length; i++) {
+				if (unique_words.indexOf(words[i]) == -1) {
+					unique_words.push(words[i]);
+				}
+			}
+			return unique_words.length;
 		},
 
 		// count the number of characters
