@@ -90,6 +90,10 @@ class WP_Linguist_Module_Manager {
 	 */
 	public function render_modules() {
 		$modules = $this->get_modules();
+
+		// allow external code to modify the order of appearance of the modules
+		$modules = apply_filters('wp_linguist_modules_render_order', $modules);
+
 		foreach ($modules as $module) {
 			$module->render();
 		}
