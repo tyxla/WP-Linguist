@@ -7,6 +7,10 @@
 			var obj = this;
 
 			$(window).on('load', function() {
+				// make sure that we continue only if tinyMCE is there
+				if (typeof tinyMCE === 'undefined') {
+					return;
+				}
 
 				// call our update method when the tinyMCE main editor is updated
 				obj.instance = tinyMCE.get('content');
