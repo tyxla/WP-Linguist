@@ -73,6 +73,11 @@ class WP_Linguist_Module_Manager {
 	 * @param WP_Post $post The post object
 	 */
 	public function render($post = null) {
+		// skip for attachments
+		if ($post && get_post_type($post) == 'attachment') {
+			return;
+		}
+
 		global $wp_linguist;		
 
 		// determine the main template
