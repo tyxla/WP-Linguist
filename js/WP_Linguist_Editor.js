@@ -14,12 +14,14 @@
 
 				// call our update method when the tinyMCE main editor is updated
 				obj.instance = tinyMCE.get('content');
-				obj.instance.on('change', function(e) {
-					obj.update( this.getContent() );
-				});
+				if (obj.instance) {
+					obj.instance.on('change', function(e) {
+						obj.update( this.getContent() );
+					});
 
-				// initial update to load the initial stats
-				obj.instance.fire('change');
+					// initial update to load the initial stats
+					obj.instance.fire('change');
+				}
 			});
 		},
 
