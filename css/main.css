@@ -3,3 +3,13 @@
 	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.04);
 	box-shadow: 0 1px 1px rgba(0,0,0,.04);
 }
+
+.wp-linguist-module { width: 25%; background: #fff; }	
+.wp-linguist-module table,
+.wp-linguist-module td,
+.wp-linguist-module th,
+.wp-linguist-module caption { border: 1px solid #e5e5e5; border-collapse: collapse; }
+.wp-linguist-module table { width: 100%; margin: 0 auto; }
+.wp-linguist-module td,
+.wp-linguist-module th { padding: 5px 10px; }
+.wp-linguist-module caption { font-size: 16px; font-weight: bold; background: #f0f0f0; padding: 10px; border-bottom: 0; }
