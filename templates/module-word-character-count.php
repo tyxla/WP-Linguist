@@ -1,5 +1,6 @@
-<div id="wp-linguist-module-wcc" class="word-character-count">
+<div id="wp-linguist-module-wcc" class="wp-linguist-module word-character-count">
 	<table>
+		<caption><?php echo $wp_linguist_module->get_title(); ?></caption>
 		<tr>
 			<th><?php _e('Words:', 'wp_linguist'); ?></th>
 			<td><span id="wp-linguist-module-wcc-words"></span></td>
