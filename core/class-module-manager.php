@@ -51,7 +51,7 @@ class WP_Linguist_Module_Manager {
 		foreach ($module_names as $module_name => $module_opts) {
 			$module_class = $module_opts['classname'];
 			$module_title = $module_opts['title'];
-			$modules[$module_name] = new $module_class($module_title);
+			$modules[$module_name] = new $module_class($module_name, $module_title);
 		}
 
 		// register the modules
