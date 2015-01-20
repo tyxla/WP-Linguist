@@ -5,6 +5,15 @@
 abstract class WP_Linguist_Module_Base {
 
 	/**
+	 * Module name.
+	 *
+	 * @access protected
+	 *
+	 * @var string
+	 */
+	protected $name;
+
+	/**
 	 * Module title.
 	 *
 	 * @access protected
@@ -20,11 +29,13 @@ abstract class WP_Linguist_Module_Base {
 	 *
 	 * @access public
 	 *
+	 * @param string $name The module name.
 	 * @param string $title The module title.
 	 */
-	public function __construct($title) {
+	public function __construct($name, $title) {
 
-		// set module title
+		// set module title and name
+		$this->set_name($name);
 		$this->set_title($title);
 
 		// enqueue scripts
@@ -33,6 +44,28 @@ abstract class WP_Linguist_Module_Base {
 		// enqueue styles
 		add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
 
+	}
+
+	/**
+	 * Retrieve the module name.
+	 *
+	 * @access public
+	 *
+	 * @return string $name The module name.
+	 */
+	public function get_name() {
+		return $this->name;
+	}
+
+	/**
+	 * Modify the module name.
+	 *
+	 * @access public
+	 *
+	 * @param string $name The new module name.
+	 */
+	public function set_name($name) {
+		$this->name = $name;
 	}
 
 	/**
@@ -58,20 +91,31 @@ abstract class WP_Linguist_Module_Base {
 	}
 
 	/**
+	 * Render the module.
+	 *
+	 * @access public
+	 */
+	public function render() {
+		global $wp_linguist, $wp_linguist_module;
+
+		// allow access to this module from the template
+		$wp_linguist_module = $this;
+
+		// determine the main template
+		$template = $wp_linguist->get_plugin_path() . '/templates/module-' . $this->get_name() . '.php';
+		$template = apply_filters('wp_linguist_template_' . $this->get_name(), $template);
+
+		// render the main template
+		include_once($template);
+	}
+
+	/**
 	 * Setup & configure the module.
 	 *
 	 * @abstract
 	 * @access public
 	 */
 	abstract public function setup();
-
-	/**
-	 * Render the module.
-	 *
-	 * @abstract
-	 * @access public
-	 */
-	abstract public function render();
 
 	/**
 	 * Enqueue module scripts.
