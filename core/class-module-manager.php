@@ -40,13 +40,13 @@ class WP_Linguist_Module_Manager {
 	public function load() {
 		// allow for new modules to be registered
 		$module_names = apply_filters('wp_linguist_modules', array(
-			'WP_Linguist_Module_Word_Character_Count'
+			'WP_Linguist_Module_Word_Character_Count' => 'Word & Character Stats'
 		));
 
 		// initialize the modules
 		$modules = array();
-		foreach ($module_names as $module_name) {
-			$modules[] = new $module_name;
+		foreach ($module_names as $module_name => $module_title) {
+			$modules[$module_name] = new $module_name($module_title);
 		}
 
 		// register the modules
