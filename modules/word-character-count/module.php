@@ -19,7 +19,10 @@ class WP_Linguist_Module_Word_Character_Count extends WP_Linguist_Module_Base {
 	 * @access public
 	 */
 	public function render() {
-		global $wp_linguist;		
+		global $wp_linguist, $wp_linguist_module;
+
+		// allow access to this module from the template
+		$wp_linguist_module = $this;
 
 		// determine the main template
 		$template = $wp_linguist->get_plugin_path() . '/templates/module-word-character-count.php';
