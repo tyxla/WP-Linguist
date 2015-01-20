@@ -40,13 +40,18 @@ class WP_Linguist_Module_Manager {
 	public function load() {
 		// allow for new modules to be registered
 		$module_names = apply_filters('wp_linguist_modules', array(
-			'WP_Linguist_Module_Word_Character_Count' => 'Word & Character Stats'
+			'word-character-count' => array(
+				'classname' => 'WP_Linguist_Module_Word_Character_Count',
+				'title' => 'Word & Character Stats',
+			),
 		));
 
 		// initialize the modules
 		$modules = array();
-		foreach ($module_names as $module_name => $module_title) {
-			$modules[$module_name] = new $module_name($module_title);
+		foreach ($module_names as $module_name => $module_opts) {
+			$module_class = $module_opts['classname'];
+			$module_title = $module_opts['title'];
+			$modules[$module_name] = new $module_class($module_title);
 		}
 
 		// register the modules
