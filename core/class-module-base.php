@@ -110,27 +110,31 @@ abstract class WP_Linguist_Module_Base {
 	}
 
 	/**
+	 * Enqueue module scripts. 
+	 * Currently enqueues nothing, should be implemented in inheriting classes.
+	 *
+	 * @access public
+	 */
+	public function enqueue_scripts() {
+
+	}
+
+	/**
+	 * Enqueue module styles. 
+	 * Currently enqueues nothing, should be implemented in inheriting classes.
+	 *
+	 * @access public
+	 */
+	public function enqueue_styles() {
+		
+	}
+
+	/**
 	 * Setup & configure the module.
 	 *
 	 * @abstract
 	 * @access public
 	 */
 	abstract public function setup();
-
-	/**
-	 * Enqueue module scripts.
-	 *
-	 * @abstract
-	 * @access public
-	 */
-	abstract public function enqueue_scripts();
-
-	/**
-	 * Enqueue module styles.
-	 *
-	 * @abstract
-	 * @access public
-	 */
-	abstract public function enqueue_styles();
 
 }
