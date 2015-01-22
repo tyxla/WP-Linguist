@@ -69,6 +69,7 @@ class WP_Linguist {
 		require_once($this->get_plugin_path() . '/core/class-module-base.php');
 
 		require_once($this->get_plugin_path() . '/modules/word-character-count/module.php');
+		require_once($this->get_plugin_path() . '/modules/keywords/module.php');
 	}
 
 	/**
