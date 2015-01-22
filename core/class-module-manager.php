@@ -44,6 +44,10 @@ class WP_Linguist_Module_Manager {
 				'classname' => 'WP_Linguist_Module_Word_Character_Count',
 				'title' => 'Word & Character Stats',
 			),
+			'keywords' => array(
+				'classname' => 'WP_Linguist_Module_Keywords',
+				'title' => 'Keywords',
+			),
 		));
 
 		// initialize the modules
