@@ -1,4 +1,4 @@
-<div id="wp-linguist-module-wcc" class="wp-linguist-module word-character-count">
+<div id="wp-linguist-module-wcc" class="wp-linguist-module wp-linguist-module-word-character-count">
 	<table>
 		<caption><?php echo $wp_linguist_module->get_title(); ?></caption>
 		<tr>
