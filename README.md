@@ -12,3 +12,7 @@ Flexible for developer customization - comes together with module management. Ea
 #### Installation
 
 Simply install and activate the plugin - no additional configuration is needed. 
+
+#### Note
+
+This plugin is still in development and has very limited functionality.
